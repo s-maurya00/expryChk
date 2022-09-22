@@ -13,7 +13,7 @@ import colors from '../configs/colors';
 
 import routes from '../navigations/routes';
 
-import firebaseApi from '../../firebase';
+// import firebaseApi from '../../firebase';
 
 const validationSchema = Yup.object().shape({
     email: Yup.string().required().email().label("Email"),
@@ -36,14 +36,14 @@ const RegisterScreen = ( { navigation } ) => {
     //     }
     // };
 
-    const handleSubmit = (email, password) => {
-        try{
-            firebaseApi.createNewUser(email, password);
-        }
-        catch (error) {
-            console.log(error);
-        }
-    }
+    // const handleSubmit = (email, password) => {
+    //     try{
+    //         firebaseApi.createNewUser(email, password);
+    //     }
+    //     catch (error) {
+    //         console.log(error);
+    //     }
+    // }
 
     return (
         <Screen>
@@ -61,7 +61,7 @@ const RegisterScreen = ( { navigation } ) => {
                             password: "",
                             confirmPassword: ""
                         }}
-                        onSubmit={({ email, password }) => handleSubmit(email, password)}
+                        onSubmit={(values) => console.log(values)}
                         validationSchema={validationSchema}
                     >
                         {() => (

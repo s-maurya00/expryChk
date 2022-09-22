@@ -1,4 +1,4 @@
-import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import { FlatList, Image, StyleSheet, TouchableOpacity, View } from "react-native";
 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
@@ -30,7 +30,7 @@ const HomeScreen = ( { navigation } ) => {
             <View style={styles.body}>
                 <View style={styles.scan}>
                     <TouchableOpacity onPress={() => navigation.navigate(routes.ADD_ITEM)} style={styles.scanItem}>
-                        <MaterialCommunityIcons name="chevron-right" size={30} color={colors.primary} />
+                        <MaterialCommunityIcons name="pencil-plus-outline" size={30} color={colors.primary} />
 
                         <AppText style={styles.txt}>Enter Item Manually</AppText>
                     </TouchableOpacity>
@@ -42,6 +42,10 @@ const HomeScreen = ( { navigation } ) => {
 
                         <AppText style={styles.txt}>Scan QR Code</AppText>
                     </TouchableOpacity>
+                </View>
+
+                <View style={styles.oldEntries}>
+                    {/* <FlatList /> */}
                 </View>
             </View>
         </Screen>
